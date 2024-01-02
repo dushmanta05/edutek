@@ -10,7 +10,7 @@ async function main() {
         { name: "JavaScript" },
         { name: "Ruby" },
         { name: "Python" },
-        { name: "Java" },
+        { name: "Node" },
         { name: "MySQL" },
       ],
     });
