@@ -1,3 +1,4 @@
+import { isAdmin } from "@/lib/admin";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
@@ -7,7 +8,7 @@ export async function POST(req: Request) {
     const { userId } = auth();
     const { title } = await req.json();
 
-    if (!userId) {
+    if (!userId || !isAdmin(userId)) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
