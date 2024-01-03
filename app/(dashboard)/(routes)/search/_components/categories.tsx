@@ -21,7 +21,7 @@ const iconMap: Record<Category["name"], IconType> = {
   TypeScript: SiTypescript,
   Python: SiPython,
   Ruby: SiRuby,
-  Java: SiNodedotjs,
+  Node: SiNodedotjs,
   MySQL: SiMysql,
 };
 
