@@ -1,12 +1,14 @@
+import { isAdmin } from "@/lib/admin";
 import { auth } from "@clerk/nextjs";
-import { error } from "console";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 
 const f = createUploadthing();
 
 const handleAuth = () => {
   const { userId } = auth();
-  if (!userId) throw new Error("Unauthorized");
+  const isAuthorized = isAdmin(userId);
+
+  if (!userId || !isAuthorized) throw new Error("Unauthorized");
   return { userId };
 };
 
