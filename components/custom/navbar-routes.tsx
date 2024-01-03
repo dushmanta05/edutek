@@ -12,7 +12,7 @@ const NavbarRoutes = () => {
   const router = useRouter();
 
   const isAdminPage = pathname?.startsWith("/admin");
-  const isChapterPage = pathname?.includes("/chapter");
+  const isCoursePage = pathname?.includes("/course");
   const isSearchPage = pathname?.includes("/search");
 
   return (
@@ -23,7 +23,7 @@ const NavbarRoutes = () => {
         </div>
       )}
       <div className="flex gap-x-2 ml-auto">
-        {isAdminPage || isChapterPage ? (
+        {isAdminPage || isCoursePage ? (
           <Link href="/">
             <Button size="sm" variant="ghost">
               <LogOut className="h-4 w-4 mr-2" />
